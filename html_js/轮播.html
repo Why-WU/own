@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <style>
+      body {
+        background-color: cornsilk;
+      }
+      #swap {
+        width: 520px;
+        height: 280px;
+        margin: 25% auto;
+        border: 1px red solid;
+      }
+      #swap #imgage {
+        width: 520px;
+        height: 280px;
+        position: absolute;
+      }
+      #swap .left,
+      #swap .right {
+        width: 25px;
+        height: 36px;
+        text-align: center;
+        line-height: 36px;
+        color: white;
+        font-weight: bold;
+        background: black;
+        opacity: 0.2;
+        filter: alpha(opacity: 20);
+        cursor: pointer;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        border: 1px black solid;
+        position: absolute;
+        margin-top: 121px;
+        z-index: 500;
+        display: none;
+      }
+      #swap .right {
+        margin-left: 492px;
+      }
+      #swap #index {
+        padding-left: 5px;
+        padding-right: 5px;
+        height: 14px;
+        border: 1px whitesmoke solid;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        background: whitesmoke;
+        opacity: 0.8;
+        position: absolute;
+        margin-top: 251px;
+        margin-left: 20%;
+        z-index: 50;
+        text-align: center;
+        padding-top: 2px;
+      }
+      #swap .indexvalue {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        background: cyan;
+        border: 1px whitesmoke solid;
+        margin-left: 2px;
+        margin-right: 2px;
+        cursor: pointer;
+        font-size: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="swap">
+      <div class="left"><</div>
+      <a href="" id="alianjie"><img src="" alt="" id="imgage"/></a>
+      <div id="index"></div>
+      <div class="right">></div>
+    </div>
+  </body>
+  <script>
+    var oleft = document.getElementsByClassName("left")[0]; //左按钮
+    var oright = document.getElementsByClassName("right")[0]; //右按钮
+    var oswap = document.getElementById("swap"); //整个外边框
+    var oimg = document.getElementById("imgage"); //img标签
+    var arr_img = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg"]; //图片地址链接
+    var arr_href = ["#1", "#2", "#3", "#4", "#5"]; //图片超链接
+    var oa = document.getElementById("alianjie"); //a链接*
+    var num = 1;
+    var i = 0;
+    var oindexvalue = document.getElementsByClassName("indexvalue");
+    var oindex = document.getElementById("index"); //索引
+
+    oswap.onmouseover = function() //鼠标移到该上面
+    {
+      oleft.style.display = "block";
+      oright.style.display = "block";
+    };
+    oswap.onmouseout = function() //鼠标移走
+    {
+      oleft.style.display = "none";
+      oright.style.display = "none";
+    };
+    oleft.onmouseover = function() //鼠标移到左按钮
+    {
+      oleft.style.cssText = "opacity: 0.6;";
+    };
+    oleft.onmouseout = function() //鼠标移开左按钮
+    {
+      oleft.style.cssText = "opacity: 0.2;";
+    };
+    oright.onmouseover = function() //鼠标移到左按钮
+    {
+      oright.style.cssText = "opacity: 0.6;";
+    };
+    oright.onmouseout = function() //鼠标移开左按钮
+    {
+      oright.style.cssText = "opacity: 0.2;";
+    };
+    function myfunction() {
+      oimg.src = arr_img[num - 1];
+      oa.href = arr_href[num - 1];
+    }
+    myfunction();
+    oright.onclick = function() //鼠标点击右按钮
+    {
+      for (var t = 0; t < arr_href.length; t++) {
+        oindexvalue[t].style.background = "cyan";
+      }
+      if (num == arr_img.length) {
+        num = 1;
+      } else {
+        num++;
+      }
+      oindexvalue[num - 1].style.background = "red";
+      myfunction();
+    };
+    function fun() {
+      for (var t = 0; t < arr_href.length; t++) {
+        oindexvalue[t].style.background = "cyan";
+      }
+      if (num == arr_img.length) {
+        num = 1;
+      } else {
+        num++;
+      }
+      oindexvalue[num - 1].style.background = "red";
+      myfunction();
+    }
+    var c = setInterval(fun, 2000);
+
+    oleft.onclick = function() //鼠标点击左按钮
+    {
+      for (var t = 0; t < arr_href.length; t++) {
+        oindexvalue[t].style.background = "cyan";
+      }
+      if (num == 1) {
+        num = arr_img.length;
+      } else num--;
+      oindexvalue[num - 1].style.background = "red";
+      myfunction();
+    };
+    function fwidth() {
+      //设置索引的宽(可以自动变换的)
+      oindex.style.width = 'arr_href.length*10+"px"';
+    }
+    fwidth();
+    for (
+      var j = 0;
+      j < arr_href.length;
+      j++ //添加索引里的小圆球
+    ) {
+      oindex.innerHTML += "<span class='indexvalue' id='q1'>" + j + "</span>"; //给索引小球添加内容j
+    }
+
+    var k = 0;
+    oindexvalue[0].style.background = "red";
+    for (i; i < arr_href.length; i++) {
+      oindexvalue[i].onclick = function() {
+        k++;
+        for (var t = 0; t < arr_href.length; t++) {
+          oindexvalue[t].style.background = "cyan";
+        }
+        this.style.backgroundColor = "red";
+        oimg.src = arr_img[this.innerHTML]; //用小球内容作为数组下标
+      };
+    }
+  </script>
+</html>
