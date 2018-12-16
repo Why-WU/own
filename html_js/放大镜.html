@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    #container{
+        position: relative;
+        width: 1200px;
+        height: 1200px;
+    }
+
+    #bmark{
+        overflow: hidden;
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 420px;
+        display: none;
+    }
+
+    #mark{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        background: rgba(0, 0, 100, 0.5);
+        display:none;
+    }
+
+    #ssmall{
+        width: 400px;
+        height: 400px;
+    }
+
+    #big{
+        position: absolute;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="ssmall">
+          <img src="18_放大镜/1.jpg" alt=""  id="small" />
+          <div id="mark"></div>
+      </div>
+      <div id="bmark"><img src="18_放大镜/2.jpg" alt=""  id="big" /></div>
+    </div>
+
+
+    <script>
+    var oContiner = document.getElementById('container');
+    var oSmall = document.getElementById('small');
+    var oMark = document.getElementById('mark');
+    var oBmark = document.getElementById('bmark');
+    var oBig = document.getElementById('big');
+    var oSsmall = document.getElementById('ssmall');
+
+    oSsmall.addEventListener('mouseover',function(){
+        oMark.style.display = 'block';
+        oBmark.style.display = 'block';
+    })
+
+    oSsmall.addEventListener('mouseout',function(){
+        oMark.style.display = 'none';
+        oBmark.style.display = 'none';
+    })
+
+    oSsmall.addEventListener('mousemove',function(e){
+        oMark.style.left = e.clientX - oMark.offsetWidth/2 + 'px';
+        oMark.style.top = e.clientY - oMark.offsetHeight/2 + 'px';
+        if (oMark.offsetLeft <= 0) {
+          oMark.style.left = 0;
+        }
+        if (oMark.offsetTop <= 0) {
+          oMark.style.top = 0;
+        }
+        if (
+          oMark.offsetLeft >=
+          oSsmall.offsetWidth - oMark.offsetWidth
+        ) {
+          oMark.style.left =
+            oSsmall.offsetWidth - oMark.offsetWidth + "px";
+        }
+        if (
+          oMark.offsetTop >=
+          oSsmall.offsetHeight - oMark.offsetHeight
+        ) {
+          oMark.style.top =
+            oSsmall.offsetHeight - oMark.offsetHeight + "px";
+        }
+        var h = oMark.offsetTop / oSsmall.offsetHeight;
+        var w = oMark.offsetLeft / oSsmall.offsetWidth;
+
+        oBig.style.top = -oBig.offsetHeight * h + "px";
+        oBig.style.left = -oBig.offsetWidth * w + "px";
+    })
+    
+    
+    </script>
+  </body>
+</html>
