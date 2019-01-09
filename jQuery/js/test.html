@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" id="one" value="trigger" />
+    <input type="button" id="two" value="triggerHandler" />
+    <input class="test" type="text" /> <input class="test" type="text" />
+    <input class="test" type="text" /> <input class="test" type="text" />
+
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script>
+      $(function() {
+        $("#one").on("click", function() {
+          $(".test").trigger("focus", ["trigger"]);
+        });
+        $("#two").on("click", function() {
+          $(".test").triggerHandler("focus", ["triggerHandler"]);
+        });
+        $(".test").on("focus", function(e, W) {
+          if (typeof W == "undefined") {
+            W = "why";
+          } else {
+            W = "nowhy";
+          }
+          $(this).val(W);
+        });
+      });
+    </script>
+  </body>
+</html>
