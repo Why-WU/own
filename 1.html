@@ -48,5 +48,31 @@
         });
       });
     </script>
+
+    <script>
+      jQuery(document).ready(function() {
+        positionElements();
+        $("#goodbye")
+          .fadeIn({ duration: 1150, queue: !1 })
+          .animate({ fontSize: 150 }, 2500)
+          .fadeOut(500, function() {
+            jQuery("#content").fadeIn();
+          });
+      });
+      jQuery(window).resize(positionElements);
+      function positionElements() {
+        var a = jQuery(document).width(),
+          b = jQuery(document).height(),
+          c = jQuery("#goodbye").width(),
+          d = jQuery("#goodbye").height(),
+          e = jQuery("#content").width(),
+          f = jQuery("#content").height();
+        jQuery("#goodbye").css({ left: a / 2 - c / 2, top: b / 2.23 - d / 3 });
+        jQuery("#content").css({ left: a / 2 - e / 2, top: b / 2 - f / 2 });
+        $(function() {
+          $("#signature").effect("pulsate", { times: 5 }, 2100);
+        });
+      }
+    </script>
   </body>
 </html>
