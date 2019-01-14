@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-    <script>
-    var x=Math.random()*1000000000;
-    var y = Math.random()*1000000000000;
-    Math.floor(x);
-    Math.floor(y);
-    document.write(x + '<br / >' + y)
+    <style>
+      body {
+        background: lightgray;
+        color: blue;
+      }
+      #i1 {
+        width: 300px;
+        height: 225px;
+      }
+      #i2 {
+        height: 225px;
+      }
+      #h2 {
+        background: white;
+        color: #00f;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>wwww</h1>
+    <button id="toggle1">imge1</button> <button id="toggle2">imge2</button>
+    <button id="toggle3">text</button>
+    <hr />
+    <img src="./imgs/kv1.jpg" alt="" id="i1" />
+    <img src="./imgs/kv2.jpg" alt="" id="i2" />
+    <hr />
+    <h2 id="h2">mmmm</h2>
 
+    <script src="./jQuery/js/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#toggle1").click(function(event) {
+          $("#i1").slideToggle("slow");
+        });
+        $("#toggle2").click(function(event) {
+          $("#i2").slideToggle("slow");
+        });
+        $("#toggle3").click(function(event) {
+          $("#h2").slideToggle("slow");
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
