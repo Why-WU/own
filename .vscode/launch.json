@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - helloworld",
+            "request": "launch",
+            "mainClass": "javaTest.helloworld",
+            "projectName": "own_95e32ccd"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - helloworld",
+            "request": "launch",
+            "mainClass": "java.helloworld",
+            "projectName": "own_95e32ccd"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - helloworld",
+            "request": "launch",
+            "mainClass": "java基础.helloworld",
+            "projectName": "own_95e32ccd"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - helloworld",
+            "request": "launch",
+            "mainClass": "helloworld",
+            "projectName": "own_95e32ccd"
+        }
+    ]
+}
