@@ -3,19 +3,16 @@
     <CommonHeader :selectMenu="selectMenu"></CommonHeader>
     <router-view class="content" @matchTab="matchTab"/>
     <CommonFooter :footerbgc="selectMenu.bgc" :menuList="menuList"></CommonFooter>
-    <!-- <Nevigitor></Nevigitor> -->
   </div>
 </template>
 
 <script>
 import CommonHeader from "@/components/CommonHeader.vue";
 import CommonFooter from "@/components/CommonFooter.vue";
-// import Nevigitor from "@/components/Nevigitor.vue"
 export default {
   components: {
     CommonHeader,
     CommonFooter
-    // Nevigitor
   },
   data() {
     return {
