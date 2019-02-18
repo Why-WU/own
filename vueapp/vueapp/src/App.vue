@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <CommonHeader :selectMenu="selectMenu"></CommonHeader>
-    <router-view class="content" @matchTab="matchTab"/>
+    <router-view class="content" @matchTab="matchTab" />
     <CommonFooter :footerbgc="selectMenu.bgc" :menuList="menuList"></CommonFooter>
   </div>
 </template>
@@ -29,6 +29,12 @@ export default {
           bgc: "rgb(33, 150, 243)",
           name: "movie",
           path: "/movie"
+        },
+        {
+          title: "音乐",
+          bgc: "rgb(0, 150, 136)",
+          name: "music",
+          path: "/music"
         }
       ]
     };
@@ -40,7 +46,7 @@ export default {
           this.selectMenu = menu;
         }
       });
-    }
+    },
   }
 };
 </script>

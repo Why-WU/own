@@ -2,9 +2,9 @@
   <div class="loading">
     <div class="loading-content">
       <ul>
-        <li class="clearfix" v-for="(item,index) in movieList" :key="index">
+        <li class="clearfix" v-for="(item,index) in movieList" :key="index" @click="goTo(item.id)">
           <div class="loading-img">
-            <img src="item.cover.url">
+            <img :src="item.cover.url">
           </div>
           <div class="loading-info">
             <div>
@@ -21,13 +21,15 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       movieList: [],
       listStart: 0,
       res: [],
-      isOver: true
+      isOver: true,
+      id: ""
     };
   },
   mounted() {
@@ -71,6 +73,9 @@ export default {
           console.log(this.movieList);
           console.log(0);
         });
+    },
+    goTo(id) {
+      this.$router.push(`/moviedetails/${id}`);
     }
   }
 };
