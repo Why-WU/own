@@ -40,15 +40,22 @@ export default class Protected extends Component {
     return (
       <div>
         <Router>
-          {/* <ul>
-<Change/>
-<li><Link to='/public'>Public Page</Link></li>
-<li><Link to='/protected'>Protected Page</Link></li>
-<Route path="/public" component={Public}/>
-<Route path="/protected" component={Protect}/>
-<Route path="/redirects" component={Redirects}/>
-</ul> */}
-          <div>123</div>
+          <div>
+            <ul>
+              <Change />
+              <li>
+                <Link to="/public">Public Page</Link>
+              </li>
+              <li>
+                <Link to="/protected">Protected Page</Link>
+              </li>
+              {/* <Route path="/public" component={Public} /> */}
+              {/* <Route path="/protected" component={Protect} /> */}
+              <Route path="/redirects" component={Redirects} />
+            </ul>
+  
+            <div>123</div>
+          </div>
         </Router>
       </div>
     );

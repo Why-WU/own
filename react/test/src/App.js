@@ -22,13 +22,13 @@ class App extends Component {
             {/* <Link to="/">Class1</Link>| */}
             {/* <Link to="/class2">Class2</Link>| */}
             {/* <Link to="/class3">Class3</Link> */}
-            <Link to="/class5">Class5</Link>
+            <Link to="/">Class5</Link>
             {/* <Link to="/class6">Class6</Link> */}
             <Switch>
               {/* <Route exact path={"/"} component={Class1} /> */}
               {/* <Route path={"/class2"} component={Class2} /> */}
               {/* <Route path={"/class3"} component={Class3} /> */}
-              <Route path={"/class5"} component={Class5} />
+              <Route path={"/"} component={Class5} />
               {/* <Route path={"/class6"} component={Class6} /> */}
             </Switch>
           </div>
