@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="" />
+</head>
+<body>
+	<script>
+		//console.log(String instanceof Object);
+		//$id=1;Person()
+
+		// class Person{
+		// 	public function __construct(){
+		// 		parent::__construct();
+		// 	}
+		// }
+		http://localhost/psci/
+		http://localhost/psci/index.php
+		http://localhost/psci/index.php/welcome
+		http://localhost/psci/index.php/welcome/
+
+		所有和PHP业务逻辑相关的代码 都放在controllers
+		所有页面 都放在views
+		所有SQL语句  都放在models
+
+		function Person(){
+			this.a=1;
+			this.b=function(){
+				console.log('b');
+			}
+		}
+
+		Person.prototype.call=function(){
+			console.log('call');
+		}
+
+		var p=new Person();
+
+		console.log(p.__proto__==Person.prototype);
+		//p.b();
+		p.call();   
+
+		var p={};
+		p.__proto=Person.prototype;
+		Person.call(p);
+	</script>
+</body>
+</html>

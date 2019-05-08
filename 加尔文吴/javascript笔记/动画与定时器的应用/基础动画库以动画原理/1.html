@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var fnArray=[];
+
+		function fnArray1(i){
+			console.log("this value "+ i);
+		}
+		for(var i=0;i<3;i++){
+			/*
+			fnArray[i]=function(){
+				console.log("this value "+ i);
+			}*/	
+			fnArray[i]=fnArray1(i);
+		}
+
+		
+
+		/*
+		for(var j=0;j<3;j++){
+			//fnArray[j]();
+			setTimeout(fnArray[j],0);
+		}*/
+		//fnArray[1]();
+		console.log(fnArray);
+			
+	</script>
+		
+</body>
+</html>
+
+
+
+

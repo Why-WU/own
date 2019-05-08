@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="immediately"></div>
+
+	<script src="./tan.js"></script>
+
+	<script>
+		MaskShare(".immediately",{  
+		    imgSrc:"./static/123.gif",  
+		    boxDomStyle:{  
+		        opacity:".9"  
+		    },  
+		    imgDomStyle:{  
+		        opacity:".8"  
+		    },  
+		    open:function(){  
+		        console.log("show");  
+		    },  
+		    close:function(){  
+		        console.log("close");  
+		    }  
+		});  
+
+	</script>
+
+	
+</body>
+</html>

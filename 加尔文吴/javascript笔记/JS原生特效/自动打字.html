@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="divTyping"></div>
+	<script>
+		var str="不是在最美好的时光遇见你,<br />而是遇见你之后都是最美好的时光";
+		var i=0;
+		function typing(){
+			var divTyping=document.getElementById('divTyping');
+			if(i<str.length){
+				divTyping.innerHTML=str.slice(0,i++)+ '_';
+				setTimeout('typing()',200);
+			}else{
+				divTyping.innerHTML=str;
+			}
+		}
+
+		typing();
+	</script>
+</body>
+</html>
